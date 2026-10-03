@@ -1,4 +1,4 @@
-import { BASE_WINDOWS, BENEFITS, SCENARIOS, SCORE_TO_UNLOCK, WEEKS_TO_UNLOCK, type Scenario, type WindowKey } from '../data/mock'
+import { BASE_WINDOWS, SCENARIOS, type Scenario, type WindowKey } from '../data/mock'
 import {
   PILLARS,
   computeDriveScore,
@@ -94,21 +94,4 @@ function getWindowKey(p: Exclude<Period, 'custom'>): WindowKey {
 /** Histórico semanal: semanas anteriores (mock) + semana atual calculada pelo código. */
 export function weeklyHistory(scenario: Scenario): number[] {
   return [...scenario.history, computePeriod(scenario, 'd7').score.overall]
-}
-
-export function streakWeeks(history: number[], min = SCORE_TO_UNLOCK): number {
-  let n = 0
-  for (let i = history.length - 1; i >= 0 && history[i] >= min; i--) n++
-  return n
-}
-
-export function benefitState(scenario: Scenario) {
-  const streak = streakWeeks(weeklyHistory(scenario))
-  const unlocked = streak >= WEEKS_TO_UNLOCK
-  return {
-    streak: Math.min(streak, WEEKS_TO_UNLOCK),
-    unlocked,
-    missing: Math.max(0, WEEKS_TO_UNLOCK - streak),
-    benefits: BENEFITS.map((b) => ({ ...b, unlocked: b.tier === 'padrao' || unlocked })),
-  }
 }

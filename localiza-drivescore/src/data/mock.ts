@@ -115,24 +115,3 @@ export const SCENARIOS: Scenario[] = [
 ]
 
 export const DEFAULT_SCENARIO: Scenario['id'] = 'alto'
-
-/** Benefícios internos do ecossistema Localiza (sem dinheiro / cashback / desconto na mensalidade). */
-export interface Benefit {
-  id: string
-  icon: string
-  title: string
-  desc: string
-  tier: 'padrao' | 'ouro'
-}
-
-export const BENEFITS: Benefit[] = [
-  { id: 'clube', icon: 'gift', title: 'Clube de Benefícios', desc: 'Acesso às ofertas padrão dos parceiros do Clube.', tier: 'padrao' },
-  { id: 'estac', icon: 'pin', title: 'Estacionamento parceiro', desc: 'Benefício ampliado em estacionamentos parceiros da rede.', tier: 'ouro' },
-  { id: 'lava', icon: 'sparkle', title: 'Higienização e lavagem', desc: 'Benefício ampliado em higienização e lavagem do seu carro.', tier: 'ouro' },
-  { id: 'aluguel', icon: 'car', title: 'Aluguel Localiza', desc: 'Vantagem ampliada para alugar um carro extra em viagens.', tier: 'ouro' },
-  { id: 'prior', icon: 'wrench', title: 'Prioridade em serviço elegível', desc: 'Agendamento prioritário em revisões e serviços elegíveis.', tier: 'ouro' },
-  { id: 'temp', icon: 'bolt', title: 'Benefício extra temporário', desc: 'Vantagem adicional no Clube ativa por 30 dias após o desbloqueio.', tier: 'ouro' },
-]
-
-export const WEEKS_TO_UNLOCK = 4
-export const SCORE_TO_UNLOCK = 90

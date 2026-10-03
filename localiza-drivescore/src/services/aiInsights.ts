@@ -117,7 +117,7 @@ export function mockInsights(input: AIInput): Insights {
   // Como melhorar
   let melhorar = DICA[worst.p]
   if (diff >= 0 && worst.score >= 90) melhorar = `Continue assim! ${DICA[worst.p]}`
-  else if (input.scoreAtual >= 90) melhorar += ' Manter o score acima de 90 por semanas seguidas aproxima você do próximo nível de benefícios.'
+  else if (input.scoreAtual >= 90) melhorar += ' Manter o score alto amplia ainda mais suas vantagens no Clube de Benefícios.'
 
   return { bem, prejudicou, melhorar, fonte: 'demo' }
 }

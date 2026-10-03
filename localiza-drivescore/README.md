@@ -22,7 +22,7 @@ Deep-link para abrir uma tela direto na demo: `http://localhost:5173/#benefits`
 1. **Home** — card "Seu DriveScore" integrado ao app → *Ver meu desempenho*.
 2. **Dashboard** — 91/100, 4 pilares, troque os filtros Hoje / 7 dias / 30 dias / Personalizado.
 3. **Resumo da IA** — o que foi bem, o que impactou, como melhorar (muda por período).
-4. **Evolução** → **Benefícios** (3/4 semanas ≥ 90 para o DriveScore Ouro).
+4. **Evolução** → **Benefícios** (todos já têm os 4 benefícios; o DriveScore só amplia a vantagem — use os chips de demo 54 / 72 / 87 para ver cada faixa).
 5. **Retrospectiva** — toque nos slides, medalha, *Compartilhar conquista*.
 6. **Como calculamos** — transparência: 5 frenagens em 50 km ≠ 5 em 1.000 km; "a IA não calcula o score".
 7. No painel: cenário **Score em queda** → **Simular notificação** (reengajamento).
@@ -47,6 +47,7 @@ src/
 - **Dados mockados:** `src/data/mock.ts`. A telemetria-base é do cenário "Score alto" (Bruno, T-Cross); "médio" e "em queda" são derivados por multiplicadores de eventos (`SCENARIOS`).
 - **Cálculo do score:** `src/services/score.ts`. Para cada pilar: `eventos ponderados por 100 km = Σ(intensidade² × peso do contexto) / km × 100`; `nota = 100 − taxa × penalidade`. Score geral = média simples dos 4 pilares. Nunca usa contagem absoluta, então quem dirige mais não é prejudicado.
 - **Serviço de IA:** `src/services/aiInsights.ts`. `buildAIInput()` transforma o resultado do score no JSON estruturado; `getInsights()` envia ao LLM ou, sem chave, usa `mockInsights()`.
+- **Benefícios por faixa:** `src/data/benefits.ts` (único lugar com os percentuais; faixas 0–59, 60–79, 80–100).
 - **Medalhas / push:** `src/services/gamification.ts` (Top 5% Ouro · 5–10% Prata · 10–15% Bronze; push se > 10 dias sem ver **e** score em queda).
 
 ## Conectando um LLM real (opcional)

@@ -110,8 +110,8 @@ export default function Home() {
             <div className="promo-art"><Icon name="trophy" size={34} color="#fff" /></div>
             <div className="promo-body">
               <b><Icon name="gift" size={15} /> Clube de Benefícios</b>
-              <p className="muted small">Bons condutores desbloqueiam vantagens extras.</p>
-              <Button variant="primary" block>Ver benefícios</Button>
+              <p className="muted small">Seu DriveScore amplia as vantagens do Clube.</p>
+              <Button variant="primary" block>Ampliar benefícios</Button>
             </div>
           </Card>
           <Card className="promo" onClick={() => showToast('Indicação — fora do escopo do MVP')}>

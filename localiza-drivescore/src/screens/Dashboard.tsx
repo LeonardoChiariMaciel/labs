@@ -68,7 +68,7 @@ export default function Dashboard() {
         <div className="menu-list">
           {[
             ['chart', 'Sua evolução', 'Histórico semanal do score', 'evolution'],
-            ['gift', 'Seus benefícios', 'Clube de Benefícios e DriveScore Ouro', 'benefits'],
+            ['gift', 'Seus benefícios', 'Vantagens ampliadas pelo seu DriveScore', 'benefits'],
             ['trophy', 'Retrospectiva mensal', 'Seu mês na direção', 'wrapped'],
             ['list', 'Análise detalhada', 'Eventos por 100 km, por pilar', 'analysis'],
             ['info', 'Como calculamos seu DriveScore', 'Transparência sobre a nota', 'how'],
